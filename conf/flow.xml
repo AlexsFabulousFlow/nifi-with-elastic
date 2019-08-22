@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flowController encoding-version="1.3">
+  <maxTimerDrivenThreadCount>10</maxTimerDrivenThreadCount>
+  <maxEventDrivenThreadCount>5</maxEventDrivenThreadCount>
+  <registries/>
+  <rootGroup>
+    <id>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</id>
+    <name>NiFi Flow</name>
+    <position x="0.0" y="0.0"/>
+    <comment/>
+    <processor>
+      <id>6aec6384-016c-1000-cc0f-5efe2b60d919</id>
+      <name>ExecuteScript</name>
+      <position x="-238.0" y="-167.0"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.script.ExecuteScript</class>
+      <bundle>
+        <group>org.apache.nifi</group>
+        <artifact>nifi-scripting-nar</artifact>
+        <version>1.9.2</version>
+      </bundle>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>DEBUG</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <executionNode>PRIMARY</executionNode>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Script Engine</name>
+        <value>Groovy</value>
+      </property>
+      <property>
+        <name>Script File</name>
+      </property>
+      <property>
+        <name>Script Body</name>
+        <value>def flowFile = session.get()
+flowFile.createAnError()</value>
+      </property>
+      <property>
+        <name>Module Directory</name>
+      </property>
+    </processor>
+    <processor>
+      <id>6aedebcc-016c-1000-e4f8-a6f04c6da60f</id>
+      <name>UpdateAttribute</name>
+      <position x="302.0" y="52.0"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.attributes.UpdateAttribute</class>
+      <bundle>
+        <group>org.apache.nifi</group>
+        <artifact>nifi-update-attribute-nar</artifact>
+        <version>1.9.2</version>
+      </bundle>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>WARN</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>DISABLED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <executionNode>ALL</executionNode>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>Delete Attributes Expression</name>
+      </property>
+      <property>
+        <name>Store State</name>
+        <value>Do not store state</value>
+      </property>
+      <property>
+        <name>Stateful Variables Initial Value</name>
+      </property>
+      <property>
+        <name>canonical-value-lookup-cache-size</name>
+        <value>100</value>
+      </property>
+    </processor>
+    <processor>
+      <id>6aec0c2c-016c-1000-721c-7beef47d7ac2</id>
+      <name>GenerateFlowFile</name>
+      <position x="-21.0" y="250.0"/>
+      <styles/>
+      <comment/>
+      <class>org.apache.nifi.processors.standard.GenerateFlowFile</class>
+      <bundle>
+        <group>org.apache.nifi</group>
+        <artifact>nifi-standard-nar</artifact>
+        <version>1.9.2</version>
+      </bundle>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+      <schedulingPeriod>0 sec</schedulingPeriod>
+      <penalizationPeriod>30 sec</penalizationPeriod>
+      <yieldPeriod>1 sec</yieldPeriod>
+      <bulletinLevel>DEBUG</bulletinLevel>
+      <lossTolerant>false</lossTolerant>
+      <scheduledState>STOPPED</scheduledState>
+      <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+      <executionNode>ALL</executionNode>
+      <runDurationNanos>0</runDurationNanos>
+      <property>
+        <name>File Size</name>
+        <value>0B</value>
+      </property>
+      <property>
+        <name>Batch Size</name>
+        <value>1</value>
+      </property>
+      <property>
+        <name>Data Format</name>
+        <value>Text</value>
+      </property>
+      <property>
+        <name>Unique FlowFiles</name>
+        <value>false</value>
+      </property>
+      <property>
+        <name>generate-ff-custom-text</name>
+      </property>
+      <property>
+        <name>character-set</name>
+        <value>UTF-8</value>
+      </property>
+    </processor>
+    <inputPort>
+      <id>90849510-016c-1000-bd02-09335a80d586</id>
+      <name>someInputPort</name>
+      <position x="506.0841064453125" y="244.56919860839844"/>
+      <comments/>
+      <scheduledState>STOPPED</scheduledState>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+    </inputPort>
+    <outputPort>
+      <id>95c84509-016c-1000-bf21-8be42e5282f0</id>
+      <name>someoutputenter</name>
+      <position x="733.0" y="367.0"/>
+      <comments/>
+      <scheduledState>STOPPED</scheduledState>
+      <maxConcurrentTasks>1</maxConcurrentTasks>
+    </outputPort>
+    <label>
+      <id>9a43ae11-016c-1000-2d05-ed7b64d0d03b</id>
+      <position x="-334.6293782614173" y="194.86198709868808"/>
+      <size height="150.0" width="150.0"/>
+      <styles>
+        <style name="background-color">#1bb316</style>
+        <style name="font-size">14px</style>
+      </styles>
+      <value>woooooooooopppp
+yeeeee
+hawwww
+somethiung
+else
+
+
+
+me</value>
+    </label>
+    <funnel>
+      <id>9a28bbde-016c-1000-cd6d-6cbf1a024b25</id>
+      <position x="363.0" y="-280.5"/>
+    </funnel>
+    <processGroup>
+      <id>9a306a75-016c-1000-40f1-5845ae0f09a4</id>
+      <name>groupTest</name>
+      <position x="632.0" y="-222.5"/>
+      <comment/>
+      <processor>
+        <id>9a325c2d-016c-1000-2da9-573593b9b26b</id>
+        <name>AttributesToJSON</name>
+        <position x="354.0" y="352.0"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.processors.standard.AttributesToJSON</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-standard-nar</artifact>
+          <version>1.9.2</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>STOPPED</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>Attributes List</name>
+        </property>
+        <property>
+          <name>attributes-to-json-regex</name>
+        </property>
+        <property>
+          <name>Destination</name>
+          <value>flowfile-attribute</value>
+        </property>
+        <property>
+          <name>Include Core Attributes</name>
+          <value>true</value>
+        </property>
+        <property>
+          <name>Null Value</name>
+          <value>false</value>
+        </property>
+      </processor>
+      <processor>
+        <id>9a328477-016c-1000-d7c6-0ad0b0fd95c9</id>
+        <name>GenerateFlowFile</name>
+        <position x="569.0" y="41.0"/>
+        <styles/>
+        <comment/>
+        <class>org.apache.nifi.processors.standard.GenerateFlowFile</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-standard-nar</artifact>
+          <version>1.9.2</version>
+        </bundle>
+        <maxConcurrentTasks>1</maxConcurrentTasks>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <penalizationPeriod>30 sec</penalizationPeriod>
+        <yieldPeriod>1 sec</yieldPeriod>
+        <bulletinLevel>WARN</bulletinLevel>
+        <lossTolerant>false</lossTolerant>
+        <scheduledState>STOPPED</scheduledState>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <executionNode>ALL</executionNode>
+        <runDurationNanos>0</runDurationNanos>
+        <property>
+          <name>File Size</name>
+          <value>0B</value>
+        </property>
+        <property>
+          <name>Batch Size</name>
+          <value>1</value>
+        </property>
+        <property>
+          <name>Data Format</name>
+          <value>Text</value>
+        </property>
+        <property>
+          <name>Unique FlowFiles</name>
+          <value>false</value>
+        </property>
+        <property>
+          <name>generate-ff-custom-text</name>
+        </property>
+        <property>
+          <name>character-set</name>
+          <value>UTF-8</value>
+        </property>
+      </processor>
+      <inputPort>
+        <id>9a32ade4-016c-1000-0a91-8eb4b1a49e67</id>
+        <name>juu</name>
+        <position x="976.0" y="235.0"/>
+        <comments/>
+        <scheduledState>STOPPED</scheduledState>
+      </inputPort>
+      <outputPort>
+        <id>9a32c0cd-016c-1000-068a-31e8dd7cd1ee</id>
+        <name>les</name>
+        <position x="990.0" y="608.0"/>
+        <comments/>
+        <scheduledState>STOPPED</scheduledState>
+      </outputPort>
+      <connection>
+        <id>9a32e326-016c-1000-35ec-fd4c62d4b9de</id>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>9a325c2d-016c-1000-2da9-573593b9b26b</sourceId>
+        <sourceGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>9a32c0cd-016c-1000-068a-31e8dd7cd1ee</destinationId>
+        <destinationGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</destinationGroupId>
+        <destinationType>OUTPUT_PORT</destinationType>
+        <relationship>failure</relationship>
+        <relationship>success</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <connection>
+        <id>9a328fa1-016c-1000-054c-baac0fab0487</id>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>9a328477-016c-1000-d7c6-0ad0b0fd95c9</sourceId>
+        <sourceGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</sourceGroupId>
+        <sourceType>PROCESSOR</sourceType>
+        <destinationId>9a325c2d-016c-1000-2da9-573593b9b26b</destinationId>
+        <destinationGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship>success</relationship>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <connection>
+        <id>9a32d45c-016c-1000-3ac0-eb7fd72a3b8c</id>
+        <name/>
+        <bendPoints/>
+        <labelIndex>1</labelIndex>
+        <zIndex>0</zIndex>
+        <sourceId>9a32ade4-016c-1000-0a91-8eb4b1a49e67</sourceId>
+        <sourceGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</sourceGroupId>
+        <sourceType>INPUT_PORT</sourceType>
+        <destinationId>9a325c2d-016c-1000-2da9-573593b9b26b</destinationId>
+        <destinationGroupId>9a306a75-016c-1000-40f1-5845ae0f09a4</destinationGroupId>
+        <destinationType>PROCESSOR</destinationType>
+        <relationship/>
+        <maxWorkQueueSize>10000</maxWorkQueueSize>
+        <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+        <flowFileExpiration>0 sec</flowFileExpiration>
+        <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+        <partitioningAttribute/>
+        <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+      </connection>
+      <controllerService>
+        <id>9a359dc1-016c-1000-619d-95662b74654a</id>
+        <name>AvroReader</name>
+        <comment/>
+        <class>org.apache.nifi.avro.AvroReader</class>
+        <bundle>
+          <group>org.apache.nifi</group>
+          <artifact>nifi-record-serialization-services-nar</artifact>
+          <version>1.9.2</version>
+        </bundle>
+        <enabled>false</enabled>
+        <property>
+          <name>schema-access-strategy</name>
+          <value>embedded-avro-schema</value>
+        </property>
+        <property>
+          <name>schema-registry</name>
+        </property>
+        <property>
+          <name>schema-name</name>
+          <value>${schema.name}</value>
+        </property>
+        <property>
+          <name>schema-version</name>
+        </property>
+        <property>
+          <name>schema-branch</name>
+        </property>
+        <property>
+          <name>schema-text</name>
+          <value>${avro.schema}</value>
+        </property>
+        <property>
+          <name>cache-size</name>
+          <value>1000</value>
+        </property>
+      </controllerService>
+    </processGroup>
+    <remoteProcessGroup>
+      <id>9a3648e0-016c-1000-17e7-230c5a5a0e3f</id>
+      <name>NiFi Flow</name>
+      <position x="790.0" y="10.0"/>
+      <comment/>
+      <url>http://localhost:8080/nifi</url>
+      <urls>http://localhost:8080/nifi</urls>
+      <timeout>30 sec</timeout>
+      <yieldPeriod>10 sec</yieldPeriod>
+      <transmitting>false</transmitting>
+      <transportProtocol>RAW</transportProtocol>
+      <proxyHost>else</proxyHost>
+      <proxyPort>42</proxyPort>
+      <proxyUser>be </proxyUser>
+      <proxyPassword>enc{c0bcd9636c87de1b13f76189015f49aa561a426e9f19ad62ab9365bf8599e448}</proxyPassword>
+      <networkInterface>something</networkInterface>
+    </remoteProcessGroup>
+    <connection>
+      <id>6aee03ed-016c-1000-8bf1-fbefcd94ca1e</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>6aec6384-016c-1000-cc0f-5efe2b60d919</sourceId>
+      <sourceGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>6aedebcc-016c-1000-e4f8-a6f04c6da60f</destinationId>
+      <destinationGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>failure</relationship>
+      <relationship>success</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+      <partitioningAttribute/>
+      <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+    </connection>
+    <connection>
+      <id>9a28f4c8-016c-1000-dbe4-ee29b33fcdcf</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>9a28bbde-016c-1000-cd6d-6cbf1a024b25</sourceId>
+      <sourceGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</sourceGroupId>
+      <sourceType>FUNNEL</sourceType>
+      <destinationId>6aedebcc-016c-1000-e4f8-a6f04c6da60f</destinationId>
+      <destinationGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship/>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+      <partitioningAttribute/>
+      <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+    </connection>
+    <connection>
+      <id>9a28dc62-016c-1000-8c95-245b2a2cea52</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>6aec6384-016c-1000-cc0f-5efe2b60d919</sourceId>
+      <sourceGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>9a28bbde-016c-1000-cd6d-6cbf1a024b25</destinationId>
+      <destinationGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</destinationGroupId>
+      <destinationType>FUNNEL</destinationType>
+      <relationship>failure</relationship>
+      <relationship>success</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+      <partitioningAttribute/>
+      <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+    </connection>
+    <connection>
+      <id>6aeca4be-016c-1000-b8ea-c4fefb11ec31</id>
+      <name/>
+      <bendPoints/>
+      <labelIndex>1</labelIndex>
+      <zIndex>0</zIndex>
+      <sourceId>6aec0c2c-016c-1000-721c-7beef47d7ac2</sourceId>
+      <sourceGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</sourceGroupId>
+      <sourceType>PROCESSOR</sourceType>
+      <destinationId>6aec6384-016c-1000-cc0f-5efe2b60d919</destinationId>
+      <destinationGroupId>8dc38c8d-016a-1000-6b46-f73d7e1d7baf</destinationGroupId>
+      <destinationType>PROCESSOR</destinationType>
+      <relationship>success</relationship>
+      <maxWorkQueueSize>10000</maxWorkQueueSize>
+      <maxWorkQueueDataSize>1 GB</maxWorkQueueDataSize>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+      <partitioningAttribute/>
+      <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+    </connection>
+    <controllerService>
+      <id>94df3bde-016c-1000-de6b-18a59d0c3189</id>
+      <name>CouchbaseClusterService</name>
+      <comment/>
+      <class>org.apache.nifi.couchbase.CouchbaseClusterService</class>
+      <bundle>
+        <group>org.apache.nifi</group>
+        <artifact>nifi-couchbase-nar</artifact>
+        <version>1.9.2</version>
+      </bundle>
+      <enabled>false</enabled>
+      <property>
+        <name>Connection String</name>
+      </property>
+      <property>
+        <name>user-name</name>
+      </property>
+      <property>
+        <name>user-password</name>
+      </property>
+    </controllerService>
+    <controllerService>
+      <id>09481dba-016b-1000-e7ed-f63d284f7579</id>
+      <name>StandardHttpContextMap</name>
+      <comment/>
+      <class>org.apache.nifi.http.StandardHttpContextMap</class>
+      <bundle>
+        <group>org.apache.nifi</group>
+        <artifact>nifi-http-context-map-nar</artifact>
+        <version>1.9.2</version>
+      </bundle>
+      <enabled>true</enabled>
+      <property>
+        <name>Maximum Outstanding Requests</name>
+        <value>5000</value>
+      </property>
+      <property>
+        <name>Request Expiration</name>
+        <value>1 min</value>
+      </property>
+    </controllerService>
+  </rootGroup>
+  <controllerServices/>
+  <reportingTasks/>
+</flowController>

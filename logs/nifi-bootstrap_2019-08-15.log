@@ -1,0 +1,7 @@
+2019-08-16 20:10:32,062 INFO [main] o.a.n.b.NotificationServiceManager Successfully loaded the following 0 services: []
+2019-08-16 20:10:32,066 INFO [main] org.apache.nifi.bootstrap.RunNiFi Registered no Notification Services for Notification Type NIFI_STARTED
+2019-08-16 20:10:32,066 INFO [main] org.apache.nifi.bootstrap.RunNiFi Registered no Notification Services for Notification Type NIFI_STOPPED
+2019-08-16 20:10:32,066 INFO [main] org.apache.nifi.bootstrap.RunNiFi Registered no Notification Services for Notification Type NIFI_DIED
+2019-08-16 20:10:32,814 INFO [main] org.apache.nifi.bootstrap.Command Apache NiFi has accepted the Shutdown Command and is shutting down now
+2019-08-16 20:10:32,831 INFO [main] org.apache.nifi.bootstrap.Command Waiting for Apache NiFi to finish shutting down...
+2019-08-16 20:10:34,848 INFO [main] org.apache.nifi.bootstrap.Command NiFi has finished shutting down.

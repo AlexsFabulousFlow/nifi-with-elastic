@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Build-Timestamp: 2019-05-06T17:16:19Z
+Clone-During-Instance-Class-Loading: false
+Archiver-Version: Plexus Archiver
+Built-By: Alex
+Nar-Version: 1.9.2
+Build-Tag: nifi-1.9.2-RC2
+Nar-Id: nifi-slack-nar
+Nar-Group: org.apache.nifi
+Created-By: Apache Maven 3.6.1
+Build-Jdk: 1.8.0_201
+
